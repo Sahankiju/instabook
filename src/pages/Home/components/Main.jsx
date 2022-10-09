@@ -31,7 +31,6 @@ function Main() {
       </Carousel>
       <BookCatalogue />
       <BookCatalogue title={"Trending Books"} books={trendingBooks} />
-      {/* <BookCatalogue title={"Recent books"} /> */}
     </StyledMain>
   );
 }

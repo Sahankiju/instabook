@@ -7,6 +7,7 @@ const BookStore = ({ selectedBook, setSelectedBook }) => {
   const [bookChip, setbookChip] = useState("AllBooks");
   return (
     <StyledBookStore>
+      <h1>InstaBook</h1>
       <div className="chipsList">
         <div
           className="chips"

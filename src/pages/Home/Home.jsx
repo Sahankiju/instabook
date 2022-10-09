@@ -7,17 +7,28 @@ import Main from "./components/Main";
 
 function Home() {
   const [selectedBook, setSelectedBook] = useState();
-  console.table(selectedBook);
+  const [selectedMenu, setSelectedMenu] = useState("Home");
+  console.log(selectedMenu);
   return (
     <StyledHome>
-      <Navbar />
-      {/* <Main /> */}
-      {
-       !selectedBook? <BookStore
-          selectedBook={selectedBook}
-          setSelectedBook={setSelectedBook}
-        />:<DetailPage selectedBook={selectedBook}/>
-      }
+      <Navbar
+        setSelectedMenu={setSelectedMenu}
+        setSelectedBook={setSelectedBook}
+      />
+      {selectedMenu === "Home" ? (
+        <Main />
+      ) : selectedMenu === "BookStore" ? (
+        !selectedBook ? (
+          <BookStore
+            selectedBook={selectedBook}
+            setSelectedBook={setSelectedBook}
+          />
+        ) : (
+          <DetailPage selectedBook={selectedBook} />
+        )
+      ) : (
+        <h1>Error</h1>
+      )}
     </StyledHome>
   );
 }
@@ -28,3 +39,6 @@ const StyledHome = styled.div`
 `;
 
 export default Home;
+
+{
+}
